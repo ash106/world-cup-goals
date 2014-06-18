@@ -21,6 +21,8 @@ gem 'title'
 gem 'uglifier'
 gem 'unicorn'
 gem 'redis'
+gem 'angularjs-rails'
+gem 'd3-rails'
 
 group :development do
   gem 'foreman'
