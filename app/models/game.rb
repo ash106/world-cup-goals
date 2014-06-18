@@ -39,5 +39,19 @@ class Game < ActiveRecord::Base
       end
     end
     handle_asynchronously :create_world_cup_games_by_year
+
+    def get_all_goals
+      hash = {}
+      ALL_YEARS.each do |year|
+        total = 0
+        goals = []
+        where(year: year).find_each do |game|
+          total += game.goals
+          goals << total 
+        end
+        hash[year] = goals
+      end
+      hash
+    end
   end
 end
